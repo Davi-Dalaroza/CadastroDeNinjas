@@ -28,7 +28,7 @@ public class NinjaModel {
     @ManyToOne
     @JoinColumn(name = "missoes_id")
     private MissoesModel missoes;
-    //@JoinColumn(name= "rank")
-    //private String Rank;
+    @JoinColumn(name= "rank")
+    private String Rank;
 
 }
