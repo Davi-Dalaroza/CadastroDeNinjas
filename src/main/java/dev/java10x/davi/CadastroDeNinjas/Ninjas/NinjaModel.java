@@ -28,7 +28,6 @@ public class NinjaModel {
     private Integer idade;
     @ManyToOne
     @JoinColumn(name = "missoes_id")
-    @JsonIgnore
     private MissoesModel missoes;
     @JoinColumn(name= "rank")
     private String Rank;
