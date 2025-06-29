@@ -1,5 +1,6 @@
 package dev.java10x.davi.CadastroDeNinjas.Ninjas;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.davi.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,7 @@ public class NinjaModel {
     private Integer idade;
     @ManyToOne
     @JoinColumn(name = "missoes_id")
+    @JsonIgnore
     private MissoesModel missoes;
     @JoinColumn(name= "rank")
     private String Rank;
