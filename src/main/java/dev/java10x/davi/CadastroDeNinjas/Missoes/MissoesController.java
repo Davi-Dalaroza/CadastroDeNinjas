@@ -2,41 +2,50 @@ package dev.java10x.davi.CadastroDeNinjas.Missoes;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("missoes")
+@RequestMapping("/missoes")
 public class MissoesController {
+
+    private MissoesService missoesService;
+
+    public MissoesController(MissoesService missoesService) {
+        this.missoesService = missoesService;
+    }
+
     @GetMapping("/boasvindas")
     public String BoasVindas() {
         return "Boas vindas ao cadastro de missoes.";
     }
 
-    // Adicionar Missão (CREATE)
+    // POST Adicionar Missão (CREATE)
     @PostMapping("/create")
-    public String createMissoes(){
+    public String createMissoes() {
         return "Missão criada";
     }
 
-    //Mostrar todos os Missão (READ)
+    // GET Mostrar todos os Missão (READ)
     @GetMapping("/all")
-    public String showAllMissoes(){
-        return "Aqui estão todas as missões";
+    public List<MissoesModel> showAllMissoes() {
+        return missoesService.showAllMissoes();
     }
 
-    //Mostrar Missão por ID (READ)
+    // GET Mostrar Missão por ID (READ)
     @GetMapping("/allid")
-    public String showAllMissoesId(){
+    public String showAllMissoesId() {
         return "Aqui estão todos os ID das missões";
     }
 
-    // Alterar dados Missão (UPDATE)
+    // PUT Alterar dados Missão (UPDATE)
     @PutMapping("/update")
-    public String updateMissoesId(){
+    public String updateMissoesId() {
         return "Missão atualizada";
     }
 
-    // Deletar Missão (DELETE)
+    // DELETE Deletar Missão (DELETE)
     @DeleteMapping("/delete")
-    public String deleteMissoesId(){
+    public String deleteMissoesId() {
         return "Missão deletada";
     }
 }
