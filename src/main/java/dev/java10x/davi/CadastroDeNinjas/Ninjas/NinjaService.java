@@ -17,4 +17,9 @@ public class NinjaService {
     public List<NinjaModel> showAllNinjas(){
         return ninjaRepository.findAll();
     }
+
+    public NinjaModel showNinjaById(Long pId){
+        Optional<NinjaModel> returnNinjaModel = ninjaRepository.findById(pId);
+        return returnNinjaModel.orElse(null);
+    }
 }
