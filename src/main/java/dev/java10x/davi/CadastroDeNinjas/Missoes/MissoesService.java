@@ -3,6 +3,7 @@ package dev.java10x.davi.CadastroDeNinjas.Missoes;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MissoesService {
@@ -15,5 +16,10 @@ public class MissoesService {
 
     public List<MissoesModel> showAllMissoes(){
         return missoesRepository.findAll();
+    }
+
+    public MissoesModel showMissaoById(Long pId){
+        Optional<MissoesModel> returnMissoesModel = missoesRepository.findById(pId);
+        return returnMissoesModel.orElse(null);
     }
 }

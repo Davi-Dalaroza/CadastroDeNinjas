@@ -32,9 +32,9 @@ public class MissoesController {
     }
 
     // GET Mostrar Missão por ID (READ)
-    @GetMapping("/allid")
-    public String showAllMissoesId() {
-        return "Aqui estão todos os ID das missões";
+    @GetMapping("/all/{id}")
+    public MissoesModel showMissaoById(@PathVariable Long id) {
+        return missoesService.showMissaoById(id);
     }
 
     // PUT Alterar dados Missão (UPDATE)
