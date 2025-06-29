@@ -21,6 +21,7 @@ public class MissoesModel {
     private String nome;
     private String Rank;
     @OneToMany(mappedBy = "missoes")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 
 
