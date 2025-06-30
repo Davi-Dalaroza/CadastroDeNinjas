@@ -27,7 +27,7 @@ public class MissoesService {
         return missoesRepository.save(pMissoes);
     }
 
-    void deleteMissoes(Long pId){
+    public void deleteMissoes(Long pId){
         missoesRepository.deleteById(pId);
     }
 }
