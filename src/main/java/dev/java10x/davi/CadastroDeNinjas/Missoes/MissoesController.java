@@ -38,9 +38,9 @@ public class MissoesController {
     }
 
     // PUT Alterar dados Missão (UPDATE)
-    @PutMapping("/update")
-    public String updateMissoesId() {
-        return "Missão atualizada";
+    @PutMapping("/update/{id}")
+    public MissoesModel updateMissoesId(@PathVariable Long id, @RequestBody MissoesModel missoes) {
+        return missoesService.updateMissoes(id, missoes);
     }
 
     // DELETE Deletar Missão (DELETE)

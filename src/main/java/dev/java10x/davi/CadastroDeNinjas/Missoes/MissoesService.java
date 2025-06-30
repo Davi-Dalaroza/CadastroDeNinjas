@@ -30,4 +30,12 @@ public class MissoesService {
     public void deleteMissoes(Long pId){
         missoesRepository.deleteById(pId);
     }
+
+    public MissoesModel updateMissoes(Long pId, MissoesModel pMissoes){
+        if(missoesRepository.existsById(pId)){
+            pMissoes.setId(pId);
+            return missoesRepository.save(pMissoes);
+        }
+        return null;
+    }
 }
