@@ -8,8 +8,8 @@ import java.util.*;
 @Service
 public class NinjaService {
 
-    private NinjaRepository ninjaRepository;
-    private NinjaMapper ninjaMapper;
+    private final NinjaRepository ninjaRepository;
+    private final NinjaMapper ninjaMapper;
 
     public NinjaService(NinjaMapper ninjaMapper, NinjaRepository ninjaRepository) {
         this.ninjaMapper = ninjaMapper;
