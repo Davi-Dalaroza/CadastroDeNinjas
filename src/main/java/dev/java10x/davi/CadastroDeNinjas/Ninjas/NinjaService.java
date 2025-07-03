@@ -29,9 +29,7 @@ public class NinjaService {
 
     public NinjaDTO showNinjaById(Long pId) {
         Optional<NinjaModel> returnNinjaModel = ninjaRepository.findById(pId);
-        NinjaDTO ninjaDTO = ninjaMapper.map(returnNinjaModel.orElse(null));
-
-        return ninjaDTO;
+        return returnNinjaModel.map(ninjaMapper::map).orElse(null);
     }
 
     public NinjaDTO createNinja(NinjaDTO pNinja) {
